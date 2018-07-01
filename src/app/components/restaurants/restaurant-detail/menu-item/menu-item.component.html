@@ -1,0 +1,13 @@
+<div class="post">
+    <img [src]="menuItem.imagePath" alt="" class="img_inner fleft">
+    <div class="extra_wrapper">
+        <div class="title col3"><a href="#">{{ menuItem.name }} </a></div>
+        {{ menuItem.description }}
+        <p class="col1">
+            <span></span>Price  {{ menuItem.price | currency:'BRL':'symbol'}}
+
+            <a><i class="fa fa-plus-circle"></i> Add</a>
+        </p>
+        <br>
+    </div>
+</div>

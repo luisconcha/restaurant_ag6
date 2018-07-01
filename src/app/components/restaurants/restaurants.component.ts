@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Restaurant} from './restaurant/restaurant.model';
+import {RestaurantsService} from './restaurants.service';
 
 @Component({
     selector: 'lacc-restaurants',
@@ -7,10 +9,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class RestaurantsComponent implements OnInit {
 
-    constructor() {
+    restaurants: Restaurant[] = [];
+
+    constructor(private restaurantService: RestaurantsService) {
     }
 
     ngOnInit() {
+        // this.restaurantService.getAllRestaurants().subscribe(restaurants => this.restaurants = restaurants);
+        this.restaurants = this.restaurantService.getAllRestaurants();
     }
 
 }
