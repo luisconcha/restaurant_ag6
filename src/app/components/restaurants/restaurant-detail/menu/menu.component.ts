@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {switchMap, tap, debounceTime, distinctUntilChanged, catchError} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 
 import {MenuItem} from '../menu-item/menu-item.model';
 import {RestaurantsService} from '../../restaurants.service';
@@ -9,9 +11,10 @@ import {RestaurantsService} from '../../restaurants.service';
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.css']
 })
+
 export class MenuComponent implements OnInit {
 
-    menu: MenuItem[];
+    menu: Observable<MenuItem[]>;
 
     constructor(private restaurantService: RestaurantsService, private route: ActivatedRoute) {
     }

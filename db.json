@@ -1,0 +1,142 @@
+{
+  "restaurants": [
+    {
+      "id": "peru",
+      "name": "Perú Food ",
+      "category": "Criolla",
+      "deliveryEstimate": "25m",
+      "rating": 4.9,
+      "imagePath": "assets/images/page3_img1.jpg",
+      "imagePathHref": "assets/images/big1.jpg",
+      "about": "A Perú Foog has 20 years of market. Among the specialties we can highlight the ceviche and rice with chicken.",
+      "hours": "It runs from Monday to Friday, from 8 am to 11 pm"
+    },
+    {
+      "id": "brazilian",
+      "name": "Brazilian Food",
+      "category": "Northeastern",
+      "deliveryEstimate": "100m",
+      "rating": 3.5,
+      "imagePath": "assets/images/page3_img2.jpg",
+      "imagePathHref": "assets/images/big2.jpg",
+      "about": "A Brazilian Foog has 40 years of market. Among the specialties we can highlight the Bahian foods.",
+      "hours": "It runs from Monday to Friday, from 8 am to 10 pm"
+    },
+    {
+      "id": "argentina",
+      "name": "Argentina Food",
+      "category": "Northeastern",
+      "deliveryEstimate": "100m",
+      "rating": 3.5,
+      "imagePath": "assets/images/page3_img3.jpg",
+      "imagePathHref": "assets/images/big2.jpg",
+      "about": "A Brazilian Foog has 40 years of market. Among the specialties we can highlight the Bahian foods.",
+      "hours": "It runs from Monday to Friday, from 8 am to 10 pm"
+    },
+    {
+      "id": "colombia",
+      "name": "Colombia Food",
+      "category": "Northeastern",
+      "deliveryEstimate": "100m",
+      "rating": 3.5,
+      "imagePath": "assets/images/page3_img4.jpg",
+      "imagePathHref": "assets/images/big2.jpg",
+      "about": "A Brazilian Foog has 40 years of market. Among the specialties we can highlight the Bahian foods.",
+      "hours": "It runs from Monday to Friday, from 8 am to 10 pm"
+    },
+    {
+      "id": "ecuador",
+      "name": "Ecuador Food",
+      "category": "Northeastern",
+      "deliveryEstimate": "100m",
+      "rating": 3.5,
+      "imagePath": "assets/images/page3_img5.jpg",
+      "imagePathHref": "assets/images/big2.jpg",
+      "about": "A Brazilian Foog has 40 years of market. Among the specialties we can highlight the Bahian foods.",
+      "hours": "It runs from Monday to Friday, from 8 am to 10 pm"
+    },
+    {
+      "id": "chile",
+      "name": "Chile Food",
+      "category": "Northeastern",
+      "deliveryEstimate": "100m",
+      "rating": 3.5,
+      "imagePath": "assets/images/page3_img3.jpg",
+      "imagePathHref": "assets/images/big2.jpg",
+      "about": "A Brazilian Foog has 40 years of market. Among the specialties we can highlight the Bahian foods.",
+      "hours": "It runs from Monday to Friday, from 8 am to 10 pm"
+    },
+    {
+      "id": "bolivia",
+      "name": "Bolivia Food",
+      "category": "Northeastern",
+      "deliveryEstimate": "100m",
+      "rating": 3.5,
+      "imagePath": "assets/images/page3_img4.jpg",
+      "imagePathHref": "assets/images/big2.jpg",
+      "about": "A Brazilian Foog has 40 years of market. Among the specialties we can highlight the Bahian foods.",
+      "hours": "It runs from Monday to Friday, from 8 am to 10 pm"
+    },
+    {
+      "id": "venezuela",
+      "name": "Venezuela Food",
+      "category": "Northeastern",
+      "deliveryEstimate": "100m",
+      "rating": 3.5,
+      "imagePath": "assets/images/page3_img2.jpg",
+      "imagePathHref": "assets/images/big2.jpg",
+      "about": "A Brazilian Foog has 40 years of market. Among the specialties we can highlight the Bahian foods.",
+      "hours": "It runs from Monday to Friday, from 8 am to 10 pm"
+    }
+  ],
+  "menu": [
+    {
+      "id": "arroz_chufa",
+      "imagePath": "assets/images/page3_img1.jpg",
+      "name": "Arroz Chaufa",
+      "description": "O melhor arroz chaufa do mundo",
+      "price": 8.7,
+      "restaurantId": "peru"
+    },
+    {
+      "id": "tallarin_saltado",
+      "imagePath": "assets/images/page3_img2.jpg",
+      "name": "Tallarin saltado",
+      "description": "O melhor tallarin saltado do mundo",
+      "price": 8.7,
+      "restaurantId": "peru"
+    },
+    {
+      "id": "tallarin_saltado",
+      "imagePath": "assets/images/page3_img2.jpg",
+      "name": "Tallarin saltado",
+      "description": "O melhor tallarin saltado do mundo",
+      "price": 8.7,
+      "restaurantId": "brazilian"
+    },
+    {
+      "id": "tallarin_saltado",
+      "imagePath": "assets/images/page3_img2.jpg",
+      "name": "Tallarin saltado",
+      "description": "O melhor tallarin saltado do mundo",
+      "price": 8.7,
+      "restaurantId": "brazilian"
+    },
+    {
+      "id": "tallarin_saltado",
+      "imagePath": "assets/images/page3_img2.jpg",
+      "name": "Tallarin saltado",
+      "description": "O melhor tallarin saltado do mundo",
+      "price": 8.7,
+      "restaurantId": "brazilian"
+    },
+    {
+      "id": "tallarin_saltado",
+      "imagePath": "assets/images/page3_img2.jpg",
+      "name": "Tallarin saltado",
+      "description": "O melhor tallarin saltado do mundo",
+      "price": 8.7,
+      "restaurantId": "argentina"
+    }
+  ]
+}

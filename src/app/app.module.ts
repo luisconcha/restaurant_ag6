@@ -1,4 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 
 
@@ -47,6 +48,7 @@ import {ChefsComponent} from './components/restaurants/restaurant-detail/chefs/c
     ],
     imports: [
         BrowserModule,
+        HttpClientModule,
         RouterModule.forRoot(ROUTES)
     ],
     providers: [RestaurantsService],

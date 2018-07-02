@@ -1,7 +1,7 @@
 <div class="container_12 menu-container">
     <div class="grid_8">
         <lacc-menu-item
-                *ngFor="let item of menu"
+                *ngFor="let item of menu | async"
                 [menuItem]="item"
         >
         </lacc-menu-item>

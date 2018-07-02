@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {switchMap, tap, debounceTime, distinctUntilChanged, catchError} from 'rxjs/operators';
+
 import {Restaurant} from './restaurant/restaurant.model';
 import {RestaurantsService} from './restaurants.service';
 
@@ -15,8 +17,11 @@ export class RestaurantsComponent implements OnInit {
     }
 
     ngOnInit() {
-        // this.restaurantService.getAllRestaurants().subscribe(restaurants => this.restaurants = restaurants);
-        this.restaurants = this.restaurantService.getAllRestaurants();
+        this.restaurantService.getAllRestaurants()
+            .pipe(
+                //tap(restaurants => console.log('R: ', restaurants))
+            )
+            .subscribe(restaurants => this.restaurants = restaurants);
     }
 
 }
