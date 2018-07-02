@@ -6,7 +6,7 @@
         <p class="col1">
             <span></span>Price  {{ menuItem.price | currency:'BRL':'symbol'}}
 
-            <a><i class="fa fa-plus-circle"></i> Add</a>
+            <a (click)="emitAddEvent()"><i class="fa fa-plus-circle"></i> Add</a>
         </p>
         <br>
     </div>

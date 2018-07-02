@@ -3,12 +3,13 @@
         <lacc-menu-item
                 *ngFor="let item of menu | async"
                 [menuItem]="item"
+                (add)="shoppingCart.addItem($event)"
         >
         </lacc-menu-item>
     </div>
 
-    <div class="grid_3">
-        <h4>Shopping Cart here</h4>
+    <div class="grid_4">
+        <lacc-shopping-cart #shoppingCart></lacc-shopping-cart>
     </div>
 </div>
 

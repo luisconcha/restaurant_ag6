@@ -18,12 +18,15 @@ import {ReservationComponent} from './components/reservation/reservation.compone
 import {ContactComponent} from './components/contact/contact.component';
 import {RestaurantsComponent} from './components/restaurants/restaurants.component';
 import {RestaurantComponent} from './components/restaurants/restaurant/restaurant.component';
-import {RestaurantsService} from './components/restaurants/restaurants.service';
 import {RestaurantDetailComponent} from './components/restaurants/restaurant-detail/restaurant-detail.component';
 import {MenuComponent} from './components/restaurants/restaurant-detail/menu/menu.component';
 import {MenuItemComponent} from './components/restaurants/restaurant-detail/menu-item/menu-item.component';
 import {ReviewsComponent} from './components/restaurants/restaurant-detail/reviews/reviews.component';
 import {ChefsComponent} from './components/restaurants/restaurant-detail/chefs/chefs.component';
+import {ShoppingCartComponent} from './components/restaurants/restaurant-detail/shopping-cart/shopping-cart.component';
+
+import {RestaurantsService} from './components/restaurants/restaurants.service';
+import {ShoppingCartService} from './components/restaurants/restaurant-detail/shopping-cart/shopping-cart.service';
 
 
 @NgModule({
@@ -44,14 +47,15 @@ import {ChefsComponent} from './components/restaurants/restaurant-detail/chefs/c
         MenuComponent,
         MenuItemComponent,
         ReviewsComponent,
-        ChefsComponent
+        ChefsComponent,
+        ShoppingCartComponent
     ],
     imports: [
         BrowserModule,
         HttpClientModule,
         RouterModule.forRoot(ROUTES)
     ],
-    providers: [RestaurantsService],
+    providers: [RestaurantsService, ShoppingCartService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,0 +1,41 @@
+<div class="box box-solid">
+    <div class="box-header">
+        <h4 class="box-title"><i class="fa fa-shopping-cart"></i> Cart</h4>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <div *ngIf="!items().length">
+            <p class="text-center">Your shopping cart is empty</p>
+        </div>
+
+        <div class="table-responsive" *ngIf="items().length">
+            <table class="table">
+                <tbody>
+                <tr *ngFor="let item of items()">
+                    <th style="width:60%" class="text-left">({{ item.quantity }}x) {{ item.menuItem.name }}</th>
+
+                    <td class="text-right">{{ item.menuItem.price | currency: 'BRL': 'symbol'}}</td>
+
+                    <td class="text-right">
+                        <a (click)="removeItem(item)" class="btn btn-sm danger"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Total:</th>
+
+                    <td class="text-right">{{ total() | currency: 'BRL':'symbol'}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="box-footer" *ngIf="items().length">
+        <div class="pull-right">
+            <button (click)="clear()" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i> Clear
+            </button>
+
+            <a class="btn btn-primary btn-sm"><i class="fa fa-credit-card"></i> Close order</a>
+        </div>
+    </div>
+</div>

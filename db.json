@@ -91,18 +91,34 @@
   ],
   "menu": [
     {
-      "id": "arroz_chufa",
+      "id": "ceviche",
       "imagePath": "assets/images/page3_img1.jpg",
-      "name": "Arroz Chaufa",
-      "description": "O melhor arroz chaufa do mundo",
+      "name": "Ceviche",
+      "description": "O melhor ceviche do mundo",
       "price": 8.7,
       "restaurantId": "peru"
     },
     {
-      "id": "tallarin_saltado",
+      "id": "arroz-com-pollo",
       "imagePath": "assets/images/page3_img2.jpg",
-      "name": "Tallarin saltado",
-      "description": "O melhor tallarin saltado do mundo",
+      "name": "Arroz com Pollo",
+      "description": "O melhor arroz com pollo do mundo",
+      "price": 8.7,
+      "restaurantId": "peru"
+    },
+    {
+      "id": "causa-rellena",
+      "imagePath": "assets/images/page3_img1.jpg",
+      "name": "Causa rellena",
+      "description": "O melhor causa rellena do mundo",
+      "price": 8.7,
+      "restaurantId": "peru"
+    },
+    {
+      "id": "arroz_chufa",
+      "imagePath": "assets/images/page3_img1.jpg",
+      "name": "Arroz Chaufa",
+      "description": "O melhor arroz chaufa do mundo",
       "price": 8.7,
       "restaurantId": "peru"
     },
