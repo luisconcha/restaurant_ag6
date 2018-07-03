@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import {AppComponent} from './app.component';
@@ -42,8 +43,9 @@ import {ShoppingCartService} from './components/restaurants/restaurant-detail/sh
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         HttpClientModule,
-        SharedModule,
+        SharedModule.forRoot(),
         RouterModule.forRoot(ROUTES)
     ],
     providers: [RestaurantsService, ShoppingCartService],
