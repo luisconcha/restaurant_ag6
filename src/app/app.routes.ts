@@ -1,14 +1,8 @@
 import {Routes} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
-import {AboutComponent} from './components/about/about.component';
-import {BlogComponent} from './components/blog/blog.component';
-import {ReservationComponent} from './components/reservation/reservation.component';
-import {ContactComponent} from './components/contact/contact.component';
 import {RestaurantsComponent} from './components/restaurants/restaurants.component';
 import {RestaurantDetailComponent} from './components/restaurants/restaurant-detail/restaurant-detail.component';
 import {MenuComponent} from './components/restaurants/restaurant-detail/menu/menu.component';
-import {ChefsComponent} from './components/restaurants/restaurant-detail/chefs/chefs.component';
-import {ReviewsComponent} from './components/restaurants/restaurant-detail/reviews/reviews.component';
 
 export const ROUTES: Routes = [
     {path: '', component: HomeComponent},
@@ -17,13 +11,15 @@ export const ROUTES: Routes = [
         children: [
             {path: '', redirectTo: 'menu', pathMatch: 'full'},
             {path: 'menu', component: MenuComponent},
-            {path: 'chefs', component: ChefsComponent},
-            {path: 'reviews', component: ReviewsComponent}
+            {path: 'chefs', loadChildren: './components/restaurants/restaurant-detail/chefs/chefs.module#ChefsModule'},
+            {path: 'reviews', loadChildren: './components/restaurants/restaurant-detail/reviews/reviews.module#ReviewsModule'},
         ]
     },
     {path: 'restaurants', component: RestaurantsComponent},
-    {path: 'about', component: AboutComponent},
-    {path: 'blog', component: BlogComponent},
-    {path: 'reservation', component: ReservationComponent},
-    {path: 'contact', component: ContactComponent}
+
+    {path: 'about', loadChildren: './components/about/about.module#AboutModule'},
+    {path: 'blog', loadChildren: './components/blog/blog.module#BlogModule'},
+    {path: 'reservation', loadChildren: './components/reservation/reservation.module#ReservationModule'},
+    {path: 'contact', loadChildren: './components/contact/contact.module#ContactModule'},
+    {path: '**', component: RestaurantsComponent}
 ];

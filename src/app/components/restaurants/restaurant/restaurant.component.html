@@ -1,5 +1,5 @@
 <a [routerLink]="['/restaurants', restaurant.id]" class="gal">
-    <img src="{{ restaurant.imagePath }}" alt=""><span></span>
+    <img [src]="restaurant.imagePath" alt=""><span></span>
 </a>
 <div class="col2">
     <span class="col3"><a href="#">{{ restaurant.name }}</a></span> $ {{ restaurant.hours }}

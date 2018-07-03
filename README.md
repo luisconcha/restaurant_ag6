@@ -16,3 +16,9 @@ ng update @angular/cli
 `nodemon --watch backend --exec "ts-node" backend/dist/server.js` 
 
 `Obs: nodemon must be globally installed` 
+
+
+## Port 4200 or 3001
+`sudo netstat -anp | grep ":4200"`
+`kill -9 port`
+`ps -xa | grep node `
