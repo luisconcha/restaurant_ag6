@@ -1,24 +1,49 @@
-# Restaurant
+<p align="center"><img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png"></p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+## About the project
 
-Caso precise atualizar para a versão 6.0
+Restaurants Project created in Angular 6, for this project we simulated a backend using express, initializing a json 
+file containing the fictitious data of the project.
 
-ng update @angular/cli
+#### Note: 
+This project is under development.
 
-## Development server
+### To initialize the project, clone the repository:
+`git clone https://github.com/luisconcha/restaurant_ag6.git`
 
-- To run and compile the server (as long as the IDE does not run the tsconfig, json file), go into the backend directory and execute the following:
+
+### Booting the backend server
+
+##### To upload the api server, at the root of the project run
+
+```sh 
+    cd name_project
+    
+    nodemon --watch backend --exec "ts-node" backend/dist/server.js
+    
+    Note: nodemon must be globally installed
+```
+
+##### If you need to change the db.json file (as long as your development IDE does not run tsconfig, json automatically), go to the backend directory and do the following:
 `tsc -w`
 
--To upload the api server, at the root of the project run:
-
-`nodemon --watch backend --exec "ts-node" backend/dist/server.js` 
-
-`Obs: nodemon must be globally installed` 
 
 
-## Port 4200 or 3001
-`sudo netstat -anp | grep ":4200"`
-`kill -9 port`
-`ps -xa | grep node `
+##### if ports 4200 or 3001 are busy
+```sh 
+    sudo netstat -anp | grep ":4200"
+    kill -9 port
+    ps -xa | grep node 
+```
+
+### Initializing the frontEnd server
+
+```sh 
+    cd name_project
+    
+    ng serve
+```
+
+
+##### Credits
+`Template link used for the project http://www.templatemonster.com/`
