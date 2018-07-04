@@ -18,6 +18,9 @@ export const ROUTES: Routes = [
         ]
     },
     {path: 'restaurants', component: RestaurantsComponent},
+    {
+        path: 'order', loadChildren: './components/order/order.module#OrderModule',
+    },
 
     {path: 'about', loadChildren: './components/about/about.module#AboutModule'},
     {path: 'blog', loadChildren: './components/blog/blog.module#BlogModule'},
