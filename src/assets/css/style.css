@@ -1391,3 +1391,12 @@ footer a:hover {
 .btn-block + .btn-block {
     margin-top: 0.5rem;
 }
+
+/*REVIEWS*/
+.reviews {
+    margin: 15px 0px !important;
+}
+
+.reviews > h4 {
+    font-size: 15px !important;
+}

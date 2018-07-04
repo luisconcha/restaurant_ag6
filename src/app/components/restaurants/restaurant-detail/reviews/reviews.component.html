@@ -1,14 +1,16 @@
 <div class="container_12">
-    <div class="grid_6" *ngFor="let review of reviews">
-        <div class="grid_3 box-reviews">
-            <img [src]="review.imagePath" alt="">
-        </div>
-        <div class="grid_2 structure">
-            <span class="review-score pull-right"><i class="fa fa-star"></i> {{ review.rating }}</span>
-            <span class="username">{{ review.name }}</span>
-            <span class="description">{{ review.date | date: 'dd/MM/yyyy'}}</span>
+    <div class="grid_6 reviews" *ngFor="let review of reviews | async">
+        <h4>{{ review.name }} - {{ review.date | date: 'dd/MM/yyyy'}}</h4>
 
-            <p>{{ review.comments }}</p>
+        <img *ngIf="review.rating < 3" src="assets/images/reactions/pissed.png" class="img_inner fleft">
+
+        <img *ngIf="review.rating >= 3 && review.rating <= 4" src="assets/images/reactions/soso.png"
+             class="img_inner fleft">
+
+        <img *ngIf="review.rating > 4" src="assets/images/reactions/loved.png" class="img_inner fleft">
+
+        <div class="extra_wrapper">
+            <p class="col1">{{ review.comments }} </p>
         </div>
     </div>
 </div>

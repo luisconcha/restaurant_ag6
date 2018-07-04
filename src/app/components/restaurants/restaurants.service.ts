@@ -13,26 +13,6 @@ export class RestaurantsService {
     constructor(private http: HttpClient) {
     }
 
-
-    reviews: Review[] = [
-        {
-            'name': 'Julia',
-            'date': '2017-01-23T18:25:43',
-            'rating': 4.5,
-            'comments': 'Good!!!!!!',
-            'restaurantId': 'peru',
-            'imagePath': 'assets/images/page2_img1.jpg'
-        },
-        {
-            'name': 'Maria',
-            'date': '2017-01-23T18:25:43',
-            'rating': 4.8,
-            'comments': 'Great!!!',
-            'restaurantId': 'brazilian',
-            'imagePath': 'assets/images/page2_img2.jpg'
-        },
-    ];
-
     getAllRestaurants(): Observable<Restaurant[]> {
         return this.http.get<Restaurant[]>(`${RESTAURANT_API}/restaurants`);
     }
@@ -42,7 +22,7 @@ export class RestaurantsService {
     }
 
 
-    getReviewsOfRestaurants(id: string) {
-        return this.reviews;
+    getReviewsOfRestaurants(id: string): Observable<Review> {
+        return this.http.get<Review>(`${RESTAURANT_API}/restaurants/${id}/reviews`);
     }
 }

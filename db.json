@@ -154,5 +154,35 @@
       "price": 8.7,
       "restaurantId": "argentina"
     }
+  ],
+  "reviews": [
+    {
+      "name": "Luis Alberto",
+      "date": "2018-01-23T18:25:43",
+      "rating": 5,
+      "comments": "Everything very good, delivery on time",
+      "restaurantId": "peru"
+    },
+    {
+      "name": "Maria Pepa",
+      "date": "2018-01-23T18:25:43",
+      "rating": 3.8,
+      "comments": "Everything very good, delivery on time",
+      "restaurantId": "peru"
+    },
+    {
+      "name": "Carlos Aberto",
+      "date": "2018-01-23T18:25:43",
+      "rating": 2.8,
+      "comments": "Everything very good, delivery on time",
+      "restaurantId": "peru"
+    },
+    {
+      "name": "Meg",
+      "date": "2018-12-12T18:25:43",
+      "rating": 5,
+      "comments": "Very tasty food, service thousand note",
+      "restaurantId": "brazilian"
+    }
   ]
 }
