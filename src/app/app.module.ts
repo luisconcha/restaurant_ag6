@@ -25,6 +25,7 @@ import {ShoppingCartComponent} from './components/restaurants/restaurant-detail/
 import {RestaurantsService} from './components/restaurants/restaurants.service';
 import {ShoppingCartService} from './components/restaurants/restaurant-detail/shopping-cart/shopping-cart.service';
 import {ReviewsComponent} from './components/restaurants/restaurant-detail/reviews/reviews.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import {ReviewsComponent} from './components/restaurants/restaurant-detail/revie
         MenuComponent,
         MenuItemComponent,
         ShoppingCartComponent,
-        ReviewsComponent
+        ReviewsComponent,
+        NotFoundComponent
     ],
     imports: [
         BrowserModule,

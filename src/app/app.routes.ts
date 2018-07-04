@@ -4,6 +4,7 @@ import {RestaurantsComponent} from './components/restaurants/restaurants.compone
 import {RestaurantDetailComponent} from './components/restaurants/restaurant-detail/restaurant-detail.component';
 import {MenuComponent} from './components/restaurants/restaurant-detail/menu/menu.component';
 import {ReviewsComponent} from './components/restaurants/restaurant-detail/reviews/reviews.component';
+import {NotFoundComponent} from './components/not-found/not-found.component';
 
 export const ROUTES: Routes = [
     {path: '', component: HomeComponent},
@@ -22,5 +23,5 @@ export const ROUTES: Routes = [
     {path: 'blog', loadChildren: './components/blog/blog.module#BlogModule'},
     {path: 'reservation', loadChildren: './components/reservation/reservation.module#ReservationModule'},
     {path: 'contact', loadChildren: './components/contact/contact.module#ContactModule'},
-    {path: '**', component: RestaurantsComponent}
+    {path: '**', component: NotFoundComponent}
 ];

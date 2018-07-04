@@ -1,0 +1,18 @@
+.not-found > h3, .not-found > p {
+    color: #900 !important;
+}
+
+.not-found > .title {
+    font-size: 70px !important;
+}
+
+.not-found > .text{
+    font-size: 25px !important;
+}
+
+.link-here{
+    color: #990000 !important;
+}
+.link-here:hover {
+    color: #85846d !important;
+}
