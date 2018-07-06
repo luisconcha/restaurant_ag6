@@ -7,8 +7,14 @@
 
         <div class="clear"></div>
 
-        <form>
+        <form [formGroup]="orderForm" novalidate>
             <div class="col-1">
+
+
+                <lacc-input-container errorMessage="Campo obrigatorio" label="Names">
+                    <input formControlName="name" class="form-control" autocomplete="off" placeholder="name">
+                </lacc-input-container>
+
                 <label>
                     Name
                     <input placeholder="Enter the name that you received the product" tabindex="1"/>
@@ -36,7 +42,7 @@
             </div>
 
             <div class="col-1">
-                <h3>Items do pedido</h3>
+                <h3>Order items</h3>
                 <table class="table-order tab-content table">
                     <thead>
                     <th>Amount</th>
