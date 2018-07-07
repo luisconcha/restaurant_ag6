@@ -1,7 +1,11 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-import {NgModule} from '@angular/core';
+import {HashLocationStrategy, LocationStrategy, registerLocaleData} from '@angular/common';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import locatePt from '@angular/common/locales/pt';
+
+registerLocaleData(locatePt, 'pt');
 
 
 import {AppComponent} from './app.component';
@@ -21,9 +25,6 @@ import {RestaurantDetailComponent} from './components/restaurants/restaurant-det
 import {MenuComponent} from './components/restaurants/restaurant-detail/menu/menu.component';
 import {MenuItemComponent} from './components/restaurants/restaurant-detail/menu-item/menu-item.component';
 import {ShoppingCartComponent} from './components/restaurants/restaurant-detail/shopping-cart/shopping-cart.component';
-
-import {RestaurantsService} from './components/restaurants/restaurants.service';
-import {ShoppingCartService} from './components/restaurants/restaurant-detail/shopping-cart/shopping-cart.service';
 import {ReviewsComponent} from './components/restaurants/restaurant-detail/reviews/reviews.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 
@@ -52,8 +53,12 @@ import {NotFoundComponent} from './components/not-found/not-found.component';
         SharedModule.forRoot(),
         RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
     ],
-    providers: [RestaurantsService, ShoppingCartService],
+    providers: [
+        {provide: LocationStrategy, useClass: HashLocationStrategy},
+        {provide: LOCALE_ID, useValue: 'pt'}
+    ],
     bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }

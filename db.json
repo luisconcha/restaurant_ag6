@@ -221,6 +221,26 @@
         }
       ],
       "id": 2
+    },
+    {
+      "name": "Meg",
+      "address": "Casa da meg",
+      "number": "2",
+      "email": "meg@gmail.com",
+      "emailConfirmation": "meg@gmail.com",
+      "optionalAddress": "A",
+      "paymentOptions": "CD",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "ceviche"
+        },
+        {
+          "quantity": 1,
+          "menuId": "arroz-com-pollo"
+        }
+      ],
+      "id": 3
     }
   ]
 }
