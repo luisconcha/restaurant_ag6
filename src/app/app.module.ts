@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {HashLocationStrategy, LocationStrategy, registerLocaleData} from '@angular/common';
-import {LOCALE_ID, NgModule} from '@angular/core';
+import {ErrorHandler, LOCALE_ID, NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import locatePt from '@angular/common/locales/pt';
 
@@ -27,6 +27,7 @@ import {MenuItemComponent} from './components/restaurants/restaurant-detail/menu
 import {ShoppingCartComponent} from './components/restaurants/restaurant-detail/shopping-cart/shopping-cart.component';
 import {ReviewsComponent} from './components/restaurants/restaurant-detail/reviews/reviews.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
+import {ApplicationErrorHandler} from './app.error-handler';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import {NotFoundComponent} from './components/not-found/not-found.component';
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
-        {provide: LOCALE_ID, useValue: 'pt'}
+        {provide: LOCALE_ID, useValue: 'pt'},
+        {provide: ErrorHandler, useClass: ApplicationErrorHandler}
     ],
     bootstrap: [AppComponent]
 })
