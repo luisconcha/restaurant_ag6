@@ -7,82 +7,78 @@
 
         <div class="clear"></div>
 
+        {{ orderForm.valid }}
+
+        {{ orderForm.value | json}}
+
         <form [formGroup]="orderForm" novalidate>
+
+
             <div class="col-1">
-
-
-                <lacc-input-container errorMessage="Campo obrigatorio" label="Names">
-                    <input formControlName="name" class="form-control" autocomplete="off" placeholder="name">
+                <lacc-input-container errorMessage="Require field and at least 3 characters" label="Name">
+                    <input formControlName="name" autocomplete="off"
+                           placeholder="Enter the name that you received the product">
                 </lacc-input-container>
+            </div>
 
-                <label>
-                    Name
-                    <input placeholder="Enter the name that you received the product" tabindex="1"/>
-                </label>
+
+            <h3 class="head3">Delivery address</h3>
+
+            <div class="clear"></div>
+
+            <div class="col-2">
+                <lacc-input-container errorMessage="Require field and at least 5 characters" label="Address">
+                    <input formControlName="address" autocomplete="off"
+                           placeholder="What is the shipping address?">
+                </lacc-input-container>
+            </div>
+
+            <div class="col-5">
+                <lacc-input-container errorMessage="Require and numeric only" label="Number">
+                    <input formControlName="number" autocomplete="off"
+                           placeholder="Address number">
+                </lacc-input-container>
+            </div>
+
+            <div class="col-5">
+                <lacc-input-container label="Complement">
+                    <input formControlName="optionalAddress" autocomplete="off"
+                           placeholder="Complement?">
+                </lacc-input-container>
             </div>
 
             <div class="col-2">
-                <label>
-                    Address
-                    <input placeholder="What is the shipping address?" tabindex="2"/>
-                </label>
+                <lacc-input-container errorMessage="Invalid email" label="Email">
+                    <input formControlName="email" autocomplete="off"
+                           placeholder="What is the shipping address?">
+                </lacc-input-container>
             </div>
-            <div class="col-5">
-                <label>
-                    Numero
-                    <input placeholder="Address number" tabindex="2"/>
-                </label>
-            </div>
+            <div class="col-2">
+                <lacc-input-container errorMessage="Invalid confirmation email" label="Email confirmation">
+                    <input formControlName="emailConfirmation" autocomplete="off"
+                           placeholder="Invalid confirmation email">
+                </lacc-input-container>
 
-            <div class="col-5">
-                <label>
-                    Complmento
-                    <input placeholder="Is there an add-on to the address?" tabindex="2"/>
-                </label>
+                <span class="pull-right has-error" *ngIf="orderForm.hasError('emailsNotMatch')">
+                        <i class="fa fa-trash-o"> Emails do not match!</i>
+                    </span>
             </div>
 
             <div class="col-1">
                 <h3>Order items</h3>
-                <table class="table-order tab-content table">
-                    <thead>
-                    <th>Amount</th>
-                    <th>Item</th>
-                    <th>Description</th>
-                    <th>Subtotal</th>
-                    <th></th>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <a href="">-</a>
-                            2
-                            <a href="">+</a>
-                        </td>
-                        <td>Causa rellena</td>
-                        <td>The best dish in town</td>
-                        <td> R$ 50</td>
-                        <td>
-                            <a class="btn btn-sm danger"><i class="fa fa-trash-o"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+
+                <lacc-order-items
+                        [items]="cartItems()"
+                        (increaseQtd)="increaseQtd($event)"
+                        (decreaseQtd)="decreaseQtd($event)"
+                        (remove)="remove($event)">
+                </lacc-order-items>
+
             </div>
 
             <div class="col-2">
                 <label>Payment methods</label>
-                <p>
-                    <input type="radio" id="test1" name="radio-group" checked>
-                    <label for="test1">Money</label>
-                </p>
-                <p>
-                    <input type="radio" id="test2" name="radio-group">
-                    <label for="test2">Credit cart</label>
-                </p>
-                <p>
-                    <input type="radio" id="test3" name="radio-group">
-                    <label for="test3">Debit card</label>
-                </p>
+                <lacc-radio [options]="paymentOptions" formControlName="paymentOptions"></lacc-radio>
 
             </div>
 
@@ -104,7 +100,9 @@
                 </table>
             </div>
             <div class="col-submit col-1">
-                <button type="submit">Checkout</button>
+                <button [disabled]="!orderForm.valid  || cartItems().length === 0"
+                        type="submit">Checkout
+                </button>
             </div>
         </form>
 

@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 import {OrderService} from './order.service';
 import {CartItem} from '../restaurants/restaurant-detail/shopping-cart/cart-item.model';
+import {PATTERS} from '../shared/patterns';
+import {RadioOption} from '../shared/radio/radio-option.model';
 
 @Component({
     selector: 'lacc-order',
@@ -16,6 +18,12 @@ export class OrderComponent implements OnInit {
     delivery: number = 10;
     orderId: string;
 
+    paymentOptions: RadioOption[] = [
+        {label: 'Money', value: 'MON'},
+        {label: 'Credit cart', value: 'CC'},
+        {label: 'Debit cart', value: 'CD'},
+        {label: 'Other', value: 'NN'}
+    ];
 
     constructor(private orderService: OrderService,
                 private router: Router,
@@ -25,9 +33,31 @@ export class OrderComponent implements OnInit {
     ngOnInit() {
         this.orderForm = new FormGroup({
             name: new FormControl('', {
-                validators: [Validators.required, Validators.minLength(5)]
-            })
-        });
+                validators: [Validators.required, Validators.minLength(3)]
+            }),
+            address: new FormControl('', [Validators.required, Validators.minLength(5)]),
+            number: new FormControl('', [Validators.required, Validators.pattern(PATTERS.number)]),
+            email: new FormControl('', [Validators.required, Validators.pattern(PATTERS.email)]),
+            emailConfirmation: new FormControl('', [Validators.required, Validators.pattern(PATTERS.email)]),
+            optionalAddress: this.formBuilder.control(''),
+            paymentOptions: new FormControl('', [Validators.required]),
+        }, {validators: [this.emailEqualsTo], updateOn: 'blur'});
+    }
+
+    private emailEqualsTo(group: AbstractControl): { [key: string]: boolean } {
+        const email = group.get('email');
+        const emailConfirmation = group.get('emailConfirmation');
+
+        if (!email || !emailConfirmation) {
+            console.log('não: ');
+            return undefined;
+        }
+
+        if (email.value !== emailConfirmation.value) {
+            return {emailsNotMatch: true};
+        }
+
+        return undefined;
     }
 
     itemsValue(): number {
@@ -44,6 +74,10 @@ export class OrderComponent implements OnInit {
 
     increaseQtd(item: CartItem) {
         return this.orderService.increaseQtd(item);
+    }
+
+    remove(item: CartItem) {
+        return this.orderService.remove(item);
     }
 
     checkOrder() {

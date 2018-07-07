@@ -4,7 +4,6 @@ form {
     overflow: hidden;
     background: #FFF;
     border-radius: 5px;
-    /*font-size: 0;*/
 }
 
 @media (min-width: 800px) {
@@ -80,7 +79,7 @@ form > div.col-submit {
 
 form > div.col-submit button {
     border: 1px solid #E4E4E4;
-    background: #A3CECE;
+    background: #85846d;
     font-size: 14px;
     color: #fff;
     padding: 1em;
@@ -100,7 +99,7 @@ form > div.col-submit button {
 }
 
 form > div.col-submit button:hover {
-    background: #92BDBD;
+    background: #5d5c4c;
 }
 
 form > div > label > select {
@@ -121,59 +120,6 @@ form > div > label > input:focus, form > div > label > select:focus {
     box-shadow: 0 3px 4px rgba(0, 0, 0, .15);
 }
 
-.table {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 20px;
-}
-
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {
-    padding: 8px;
-    line-height: 1.42857143;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
-}
-
-.table > thead > tr > th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #ddd;
-}
-
-.table > caption + thead > tr:first-child > th,
-.table > colgroup + thead > tr:first-child > th,
-.table > thead:first-child > tr:first-child > th,
-.table > caption + thead > tr:first-child > td,
-.table > colgroup + thead > tr:first-child > td,
-.table > thead:first-child > tr:first-child > td {
-    border-top: 0;
-}
-
-.table > tbody + tbody {
-    border-top: 2px solid #ddd;
-}
-
-.table .table {
-    background-color: #fff;
-}
-
-table col[class*="col-"] {
-    position: static;
-    display: table-column;
-    float: none;
-}
-
-table td[class*="col-"],
-table th[class*="col-"] {
-    position: static;
-    display: table-cell;
-    float: none;
-}
-
 .col-left {
     text-align: left !important;
 }
@@ -182,59 +128,3 @@ table th[class*="col-"] {
     text-align: right !important;
 }
 
-/*RAIDO*/
-
-[type="radio"]:checked,
-[type="radio"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
-}
-
-[type="radio"]:checked + label,
-[type="radio"]:not(:checked) + label {
-    position: relative;
-    padding-left: 28px;
-    cursor: pointer;
-    line-height: 20px;
-    display: inline-block;
-    color: #666;
-}
-
-[type="radio"]:checked + label:before,
-[type="radio"]:not(:checked) + label:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 18px;
-    height: 18px;
-    border: 1px solid #ddd;
-    border-radius: 100%;
-    background: #fff;
-}
-
-[type="radio"]:checked + label:after,
-[type="radio"]:not(:checked) + label:after {
-    content: '';
-    width: 12px;
-    height: 12px;
-    background: #85846d;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    border-radius: 100%;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-
-[type="radio"]:not(:checked) + label:after {
-    opacity: 0;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-}
-
-[type="radio"]:checked + label:after {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-}

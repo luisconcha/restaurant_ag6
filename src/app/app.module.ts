@@ -10,7 +10,7 @@ import {SocialNetwortkComponent} from './components/header/social-networtk/socia
 import {StoreTitleComponent} from './components/header/store-title/store-title.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {RouterModule} from '@angular/router';
+import {PreloadAllModules, RouterModule} from '@angular/router';
 
 import {ROUTES} from './app.routes';
 import {SharedModule} from './components/shared/shared.module';
@@ -26,6 +26,7 @@ import {RestaurantsService} from './components/restaurants/restaurants.service';
 import {ShoppingCartService} from './components/restaurants/restaurant-detail/shopping-cart/shopping-cart.service';
 import {ReviewsComponent} from './components/restaurants/restaurant-detail/reviews/reviews.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
+import { DeliveryCostsComponent } from './components/delivery-costs/delivery-costs.component';
 
 
 @NgModule({
@@ -43,14 +44,15 @@ import {NotFoundComponent} from './components/not-found/not-found.component';
         MenuItemComponent,
         ShoppingCartComponent,
         ReviewsComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        DeliveryCostsComponent
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
         SharedModule.forRoot(),
-        RouterModule.forRoot(ROUTES)
+        RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
     ],
     providers: [RestaurantsService, ShoppingCartService],
     bootstrap: [AppComponent]

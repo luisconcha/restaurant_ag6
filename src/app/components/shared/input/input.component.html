@@ -1,12 +1,10 @@
-<div class="form-group has-feedback"
+<div class="has-feedback"
      [class.has-success]="hasSuccess()"
      [class.has-error]="hasError()"
 >
     <label>
         {{ label }}
-        
         <ng-content></ng-content>
-
     </label>
 
     <span class="help-block" *ngIf="showTip && hasSuccess()">

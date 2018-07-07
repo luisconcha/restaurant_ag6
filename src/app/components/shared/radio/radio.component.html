@@ -1,0 +1,8 @@
+<div *ngFor="let option of options">
+    <input type="radio" id="{{ option.value }}" name="radio-group"
+           (click)="setValue(option.value)"
+           [class.checked]="option.value === value"
+           aria-checked="false" aria-disabled="false">
+
+    <label for="{{ option.value }}">{{ option.label}}</label>
+</div>
