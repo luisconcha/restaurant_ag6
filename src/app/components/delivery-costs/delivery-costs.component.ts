@@ -17,8 +17,6 @@ export class DeliveryCostsComponent implements OnInit {
     }
 
     total(): number {
-        console.log('delivery: ', this.delivery);
-        console.log('itemsValue: ', this.itemsValue);
         return this.delivery + this.itemsValue;
     }
 

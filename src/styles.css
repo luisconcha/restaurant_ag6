@@ -59,3 +59,8 @@ table th[class*="col-"] {
     text-align: right !important;
 }
 
+.disabled {
+    color: #fff;
+    background-color: #aebbca !important;
+    border-color: #55677d !important;
+}

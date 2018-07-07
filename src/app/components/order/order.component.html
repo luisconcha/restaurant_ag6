@@ -89,7 +89,9 @@
 
             </div>
             <div class="col-submit col-1">
-                <button [disabled]="!orderForm.valid  || cartItems().length === 0"
+                <button [disabled]="!orderForm.valid || cartItems().length === 0"
+                        [class.disabled]="!orderForm.valid"
+                        (click)="checkOrder(orderForm.value)"
                         type="submit">Checkout
                 </button>
             </div>

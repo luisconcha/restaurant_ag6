@@ -6,6 +6,8 @@ import {OrderService} from './order.service';
 import {CartItem} from '../restaurants/restaurant-detail/shopping-cart/cart-item.model';
 import {PATTERS} from '../shared/patterns';
 import {RadioOption} from '../shared/radio/radio-option.model';
+import {Order, OrderItem} from './order.model';
+import {tap} from "rxjs/internal/operators";
 
 @Component({
     selector: 'lacc-order',
@@ -31,7 +33,7 @@ export class OrderComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.orderForm = new FormGroup({
+        this.orderForm = this.formBuilder.group({
             name: new FormControl('', {
                 validators: [Validators.required, Validators.minLength(3)]
             }),
@@ -49,7 +51,6 @@ export class OrderComponent implements OnInit {
         const emailConfirmation = group.get('emailConfirmation');
 
         if (!email || !emailConfirmation) {
-            console.log('não: ');
             return undefined;
         }
 
@@ -80,8 +81,20 @@ export class OrderComponent implements OnInit {
         return this.orderService.remove(item);
     }
 
-    checkOrder() {
-        return false;
+    checkOrder(order: Order) {
+        order.orderItems = this.cartItems()
+            .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id));
+
+        this.orderService.checkOrder(order)
+            .pipe(
+                tap((orderId: string) => {
+                    this.orderId = orderId;
+                })
+            )
+            .subscribe(() => {
+                this.router.navigate(['/restaurants']);
+                this.orderService.clear();
+            });
     }
 
     isOrderCompleted(): boolean {
