@@ -92,7 +92,7 @@ export class OrderComponent implements OnInit {
                 })
             )
             .subscribe(() => {
-                this.router.navigate(['/restaurants']);
+                this.router.navigate(['/order-summary']);
                 this.orderService.clear();
             });
     }

@@ -64,3 +64,8 @@ table th[class*="col-"] {
     background-color: #aebbca !important;
     border-color: #55677d !important;
 }
+
+.order-summary {
+    margin-bottom: 20px;
+    font-size: 20px;
+}

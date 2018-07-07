@@ -26,5 +26,6 @@ export const ROUTES: Routes = [
     {path: 'blog', loadChildren: './components/blog/blog.module#BlogModule'},
     {path: 'reservation', loadChildren: './components/reservation/reservation.module#ReservationModule'},
     {path: 'contact', loadChildren: './components/contact/contact.module#ContactModule'},
+    {path: 'order-summary', loadChildren: './components/order/order-summary/order-summary.module#OrderSummaryModule'},
     {path: '**', component: NotFoundComponent}
 ];
