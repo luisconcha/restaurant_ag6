@@ -44,6 +44,26 @@ This project is under development.
     ng serve
 ```
 
+###application build
+```sh
+- To generate with the development settings (does the buld with .map files):
+    ng build
+```
+```sh
+- To generate build for production (DO NOT build with .map files) :
+    ng build --prod
+```
+```sh
+- To generate build for production on shared server (the slash in the end is important)
+    ng build --prod --bh=/nome_pasta/
+```
+
+###Simulate an application server (hSimpleHTTPServer must be installed)
+```sh
+- cd dist
+    python -m SimpleHTTPServer 8000 
+```
+
 
 ##### Credits
 `Template link used for the project http://www.templatemonster.com/`
