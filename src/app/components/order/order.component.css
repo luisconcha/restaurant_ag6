@@ -120,11 +120,3 @@ form > div > label > input:focus, form > div > label > select:focus {
     box-shadow: 0 3px 4px rgba(0, 0, 0, .15);
 }
 
-.col-left {
-    text-align: left !important;
-}
-
-.col-right {
-    text-align: right !important;
-}
-

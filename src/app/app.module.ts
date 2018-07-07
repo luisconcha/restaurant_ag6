@@ -26,7 +26,6 @@ import {RestaurantsService} from './components/restaurants/restaurants.service';
 import {ShoppingCartService} from './components/restaurants/restaurant-detail/shopping-cart/shopping-cart.service';
 import {ReviewsComponent} from './components/restaurants/restaurant-detail/reviews/reviews.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
-import { DeliveryCostsComponent } from './components/delivery-costs/delivery-costs.component';
 
 
 @NgModule({
@@ -44,8 +43,7 @@ import { DeliveryCostsComponent } from './components/delivery-costs/delivery-cos
         MenuItemComponent,
         ShoppingCartComponent,
         ReviewsComponent,
-        NotFoundComponent,
-        DeliveryCostsComponent
+        NotFoundComponent
     ],
     imports: [
         BrowserModule,

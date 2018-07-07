@@ -1,3 +1,14 @@
-<p>
-  delivery-costs works!
-</p>
+<table class="table-delivery-costs tab-content table">
+    <tr>
+        <th class="col-left">Items</th>
+        <td class="col-right">{{ itemsValue | currency:'BRL':'symbol' }}</td>
+    </tr>
+    <tr>
+        <th class="col-left">Freight</th>
+        <td class="col-right">{{ delivery | currency:'BRL': 'symbol' }}</td>
+    </tr>
+    <tr>
+        <th class="col-left">Total</th>
+        <td class="col-right">{{ total() | currency:'BRL':'symbol' }}</td>
+    </tr>
+</table>

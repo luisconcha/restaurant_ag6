@@ -84,20 +84,9 @@
 
             <div class="col-2">
                 <label>Freight and total</label>
-                <table class="table-delivery-costs tab-content table">
-                    <tr>
-                        <th class="col-left">Items</th>
-                        <td class="col-right">2</td>
-                    </tr>
-                    <tr>
-                        <th class="col-left">Freight</th>
-                        <td class="col-right">R$ 25</td>
-                    </tr>
-                    <tr>
-                        <th class="col-left">Total</th>
-                        <td class="col-right">R$ 125</td>
-                    </tr>
-                </table>
+
+                <lacc-delivery-costs [delivery]="delivery" [itemsValue]="itemsValue()"></lacc-delivery-costs>
+
             </div>
             <div class="col-submit col-1">
                 <button [disabled]="!orderForm.valid  || cartItems().length === 0"

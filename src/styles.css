@@ -50,3 +50,12 @@ table th[class*="col-"] {
     display: table-cell;
     float: none;
 }
+
+.col-left {
+    text-align: left !important;
+}
+
+.col-right {
+    text-align: right !important;
+}
+
