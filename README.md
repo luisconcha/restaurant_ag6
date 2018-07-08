@@ -64,6 +64,18 @@ This project is under development.
     python -m SimpleHTTPServer 8000 
 ```
 
+###Access data example
+```sh
+   email: luis@gmail.com
+   password: 123456
+   
+   email: meg@gmail.com
+   password: 123456 
+   
+    email: apolo@gmail.com
+    password: 123456 
+```
+
 
 ##### Credits
 `Template link used for the project http://www.templatemonster.com/`
