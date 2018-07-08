@@ -1,0 +1,10 @@
+<div class="user-detail">
+    <span *ngIf="isLoggedIn(); else notLoggedIn">
+    Hello, {{ user().name }} | <a (click)="logout()">Logout</a>
+</span>
+
+    <ng-template #notLoggedIn>
+        <a (click)="login()" class="login-user-detail">LogIn</a>
+    </ng-template>
+
+</div>

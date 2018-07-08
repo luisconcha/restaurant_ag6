@@ -29,6 +29,7 @@ import {ReviewsComponent} from './components/restaurants/restaurant-detail/revie
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {ApplicationErrorHandler} from './app.error-handler';
 import { LoginComponent } from './components/security/login/login.component';
+import { UserDetailComponent } from './components/header/user-detail/user-detail.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { LoginComponent } from './components/security/login/login.component';
         ShoppingCartComponent,
         ReviewsComponent,
         NotFoundComponent,
-        LoginComponent
+        LoginComponent,
+        UserDetailComponent
     ],
     imports: [
         BrowserModule,
