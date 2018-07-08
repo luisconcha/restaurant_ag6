@@ -44,7 +44,7 @@ This project is under development.
     ng serve
 ```
 
-###application build
+### Application build
 ```sh
 - To generate with the development settings (does the buld with .map files):
     ng build
@@ -58,13 +58,13 @@ This project is under development.
     ng build --prod --bh=/nome_pasta/
 ```
 
-###Simulate an application server (hSimpleHTTPServer must be installed)
+### Simulate an application server (hSimpleHTTPServer must be installed)
 ```sh
 - cd dist
     python -m SimpleHTTPServer 8000 
 ```
 
-###Access data example
+### Access data example
 ```sh
    email: luis@gmail.com
    password: 123456
