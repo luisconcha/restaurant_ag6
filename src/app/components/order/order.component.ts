@@ -7,7 +7,7 @@ import {CartItem} from '../restaurants/restaurant-detail/shopping-cart/cart-item
 import {PATTERS} from '../shared/patterns';
 import {RadioOption} from '../shared/radio/radio-option.model';
 import {Order, OrderItem} from './order.model';
-import {tap} from "rxjs/internal/operators";
+import {tap} from 'rxjs/operators';
 
 @Component({
     selector: 'lacc-order',

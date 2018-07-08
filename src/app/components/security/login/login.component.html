@@ -1,0 +1,35 @@
+<div class="content login">
+    <div class="container_12">
+        
+        <div class="grid_12">
+            <h4 class="title-login">Restaurant | Login</h4>
+
+            <p class="sub-title-login">
+                Por favor, efetue o login para continuar
+            </p>
+
+            <form [formGroup]="loginForm">
+
+                <lacc-input-container [showTip]="false">
+                    <input type="text" formControlName="email" class="form-control" placeholder="Email">
+                </lacc-input-container>
+
+                <lacc-input-container>
+                    <input type="password" formControlName="password" class="form-control" placeholder="Password">
+                </lacc-input-container>
+
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-xs-offset-8 col-xs-4">
+                        <button [disabled]="loginForm.invalid"
+                                (click)="login()"
+                                type="submit" class="btn btn-primary btn-block btn-flat">
+                            Log in
+                        </button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

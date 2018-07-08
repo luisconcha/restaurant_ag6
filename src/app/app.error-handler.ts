@@ -2,6 +2,7 @@ import {ErrorHandler, Injectable, Injector, NgZone} from '@angular/core';
 import {HttpErrorResponse} from '@angular/common/http';
 
 import {NotificationService} from './components/shared/messages/notification.service';
+import {LoginService} from './components/security/login/login.service';
 
 @Injectable()
 export class ApplicationErrorHandler extends ErrorHandler {
@@ -23,6 +24,7 @@ export class ApplicationErrorHandler extends ErrorHandler {
                         break;
                     case 401:
                         // when the login part is ready, inject the Injector into the constructor to avoid cyclical dependence.
+                        this.injector.get(LoginService).handleLogin();
                         break;
                     case 403:
                         this.ns.notify(message || 'Not authorized');

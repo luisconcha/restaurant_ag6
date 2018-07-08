@@ -69,3 +69,20 @@ table th[class*="col-"] {
     margin-bottom: 20px;
     font-size: 20px;
 }
+
+.login > p {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.title-login {
+    font-size: 35px !important;
+    text-align: center;
+    margin-top: 66px;
+}
+
+.sub-title-login {
+    font-size: 19px !important;
+    text-align: center;
+    margin-top: 29px;
+}

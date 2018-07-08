@@ -28,6 +28,7 @@ import {ShoppingCartComponent} from './components/restaurants/restaurant-detail/
 import {ReviewsComponent} from './components/restaurants/restaurant-detail/reviews/reviews.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {ApplicationErrorHandler} from './app.error-handler';
+import { LoginComponent } from './components/security/login/login.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import {ApplicationErrorHandler} from './app.error-handler';
         MenuItemComponent,
         ShoppingCartComponent,
         ReviewsComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,

@@ -31,7 +31,7 @@ This project is under development.
 
 ##### if ports 4200 or 3001 are busy
 ```sh 
-    sudo netstat -anp | grep ":4200"
+    sudo netstat -anp | grep ":4200"  || sudo kill -9 `sudo lsof -t -i:4200`
     kill -9 port
     ps -xa | grep node 
 ```
