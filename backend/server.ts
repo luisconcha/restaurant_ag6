@@ -2,6 +2,8 @@ import * as jsonServer from 'json-server';
 import {Express} from 'express';
 import * as fs from 'fs';
 import * as https from 'https';
+import {handleAuthentication} from './security/auth';
+import {handleAuthorization} from './security/authz';
 
 const colors = require('colors');
 const port = 3001;
@@ -12,6 +14,10 @@ const middlewares = jsonServer.defaults();
 server.use(middlewares);
 
 server.use(jsonServer.bodyParser);
+
+server.post('/login', handleAuthentication);
+
+server.use('/orders', handleAuthorization);
 
 server.use(router);
 
